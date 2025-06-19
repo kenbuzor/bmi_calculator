@@ -1,4 +1,5 @@
 import 'package:bmi_calculator/calculator_brain.dart';
+import 'package:bmi_calculator/widgets/calculate_btn.dart';
 import 'package:bmi_calculator/widgets/round_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -192,22 +193,15 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: () {
+          CalculateBtn(
+            btnText: 'CALCULATE',
+            onCalculate: () {
               Navigator.pushNamed(
                 context,
                 '/result_page',
                 arguments: CalculatorBrain(height: height, weight: weight),
               );
             },
-            child: Container(
-              color: kBottomContainerColor,
-              margin: const EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              alignment: Alignment.center,
-              height: kBottomContainerHeight,
-              child: const Text('CALCULATE', style: kLargeButtonTextStyle),
-            ),
           ),
         ],
       ),

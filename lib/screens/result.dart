@@ -1,5 +1,6 @@
 import 'package:bmi_calculator/calculator_brain.dart';
 import 'package:bmi_calculator/constants.dart';
+import 'package:bmi_calculator/widgets/calculate_btn.dart';
 import 'package:bmi_calculator/widgets/reusable_card.dart';
 import 'package:flutter/material.dart';
 
@@ -59,18 +60,11 @@ class ResultPage extends StatelessWidget {
                 ),
               ),
             ),
-            GestureDetector(
-              onTap: () {
+            CalculateBtn(
+              btnText: 'RE-CALCULATE',
+              onCalculate: () {
                 Navigator.pop(context);
               },
-              child: Container(
-                color: kBottomContainerColor,
-                margin: const EdgeInsets.only(top: 10.0),
-                width: double.infinity,
-                alignment: Alignment.center,
-                height: kBottomContainerHeight,
-                child: const Text('RE-CALCULATE', style: kLargeButtonTextStyle),
-              ),
             ),
           ],
         ),
